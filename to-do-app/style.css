@@ -1,5 +1,6 @@
 * {
   font-size: 62.5%;
+  font-family: cursive;
 }
 
 .gradient {
@@ -39,10 +40,10 @@ body {
 }
 
 .main-body {
-  margin-top: 10rem;
+  margin-top: 5rem;
   background-color: aqua;
   width: 50rem;
-  height: 53rem;
+  height: 59rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,4 +172,55 @@ body {
   display: grid;
   place-content: center;
   border-radius: 20px;
+}
+
+.bottom-btn{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 7px;
+
+}
+.clear-btn{
+  height: 35px;
+  width: 150px;
+  font-size: 1.6rem;
+  border-radius: 15px;
+  outline: none;
+  /* border: 0px; */
+  border: 3px solid rgb(1, 213, 1);
+  font-weight: 600;
+  /* color: red; */
+  transition: 0.1s ease-out;
+  box-shadow: 0px 5px 5px black;
+}
+.clear-btn:hover{
+  background-color: rgb(1, 213, 1);
+  color: white;
+}
+.clear-btn:active{
+  box-shadow: 0px 0px ;
+  font-size: 1.5rem;
+}
+
+.clearSaved-btn{
+  height: 35px;
+  width: 150px;
+  font-size: 1.6rem;
+  border-radius: 15px;
+  outline: none;
+  /* border: 0px; */
+  border: 3px solid red;
+  font-weight: 600;
+  color: red;
+  transition: 0.1s ease-out;
+  box-shadow: 0px 5px 5px black;
+}
+.clearSaved-btn:hover{
+  background-color: red;
+  color: white;
+}
+.clearSaved-btn:active{
+  box-shadow: 0px 0px ;
+  font-size: 1.5rem;
 }

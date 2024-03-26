@@ -24,28 +24,53 @@ button.addEventListener("click", () => {
     }
 })
 
-listBody.addEventListener(("click"),(e)=>{
-    if(e.target.tagName=="LI"){
+listBody.addEventListener(("click"), (e) => {
+    if (e.target.tagName == "LI") {
         e.target.classList.toggle("checked");
         saveData()
     }
-    else if(e.target.tagName=="I"){
+    else if (e.target.tagName == "I") {
         e.target.parentElement.parentElement.remove()
         countValue--;
         count.innerHTML = `todo count : ${countValue}`;
-        saveData()
+
     }
 })
 
-function saveData(){
-    localStorage.setItem("data",listBody.innerHTML);
-    localStorage.setItem("count",countValue);
+function saveData() {
+    if (listBody.innerHTML == "") {
+        alert("nothing to save");
+    } else {
+        localStorage.setItem("data", listBody.innerHTML);
+        localStorage.setItem("count", countValue);
+    }
 }
 
-function loadData(){
-    listBody.innerHTML=localStorage.getItem("data")
-    countValue=localStorage.getItem("count")
+function loadData() {
+    listBody.innerHTML = localStorage.getItem("data")
+    countValue = localStorage.getItem("count")
     count.innerHTML = `todo count : ${countValue}`;
 }
 
+function clearSaved() {
+    if (listBody.innerHTML == "") { alert("nothing to save") }
+    else {
+        let res = confirm("Confirm to delete saved data")
+    
+        if(res){
+            localStorage.clear();
+            countValue=0;
+            count.innerHTML=`todo count : ${countValue}`
+            
+            listBody.innerHTML="" 
+        }else{
+            alert("cancelled");
+        }
+        
+        
+    }
+}
+
+
 loadData();
+
